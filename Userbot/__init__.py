@@ -32,7 +32,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-rebel_ID = ["1212368262"]
+rebel_ID = ["1418571871"]
 
 """ PPE initialization. """
 
