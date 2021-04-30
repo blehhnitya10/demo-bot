@@ -232,7 +232,7 @@ async def ban(bon):
     if reason:
         await rebelevent.edit(f"{str(user.id)} is banned !!\nReason: {reason}")
     else:
-        await rebelevent.edit(f"{str(user.id)} is banned!")
+        await rebelevent.edit(f"{str(user.id)} is banned  BHAG BHNCHO IDHAR SA!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -261,7 +261,7 @@ async def nothanos(unbon):
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await rebelevent.edit("Unbanned Successfully!")
+        await rebelevent.edit("Unbanned Successfully  AAYA GAYA OKAD MAA !")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
