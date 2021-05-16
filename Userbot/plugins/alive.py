@@ -42,19 +42,19 @@ pm_caption += (
     f"                 👑𝕄𝔸𝕊𝕋𝔼ℝ👑\n**  『😈[{DEFAULTUSER}](tg://user?id={rebel})😈』**\n\n"
 )
 
-pm_caption += "🛡️TELETHON🛡️ : `1.15.0` \n\n"
+pm_caption += "🛡️𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡🛡️ : `1.15.0` \n\n"
 
-pm_caption += f"😈ℝ𝔼𝔹𝔼𝕃𝔹𝕆𝕋😈 : `{rebelversion}`\n\n"
+pm_caption += f"😈𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧😈 : `{rebelversion}`\n\n"
 
-pm_caption += f"😱SUDO😱            : `{sudou}`\n\n"
+pm_caption += f"😱𝗦𝗨𝗗𝗢😱            : `{sudou}`\n\n"
 
-pm_caption += "😇CHANNEL😇️   : [ᴊᴏɪɴ](https://t.me/REBELBOT_SUPPORT)\n\n"
+pm_caption += "😇𝗖𝗛𝗔𝗡𝗡𝗘𝗟😇️   : [ᴊᴏɪɴ](https://t.me/REBELBOT_SUPPORT)\n\n"
 
-pm_caption += "😎CREATOR😎    : [༼🇷È🇧É🇱](https://t.me/REBEL_IS_OP)\n\n"
+pm_caption += "😎𝗖𝗥𝗘𝗔𝗧𝗢𝗥😎    : [༼🇷È🇧É🇱](https://t.me/REBEL_IS_OP)\n\n"
 
-pm_caption += "🤩SUPPORTER🤩    :[ⓃⒾⓈⒽⓊ](https://t.me/Baapisbacknishujibolmotherchod)\n\n"
+pm_caption += "🤩𝗦𝗨𝗣𝗣𝗢𝗥𝗧𝗘𝗥🤩    :[ⓃⒾⓈⒽⓊ](https://t.me/Baapisbacknishujibolmotherchod)\n\n"
 
-pm_caption += "      [🔥REPO🔥]() 🔹 [📜License📜](https://github.com/H1M4N5HU0P/rebel-BOT/blob/main/LICENSE)"
+pm_caption += "      [🔥𝗥𝗘𝗣𝗢🔥]() 🔹 [📜𝗟𝗶𝗰𝗲𝗻𝘀𝗲📜](https://github.com/H1M4N5HU0P/rebel-BOT/blob/main/LICENSE)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
