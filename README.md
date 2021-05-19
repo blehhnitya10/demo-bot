@@ -31,8 +31,8 @@
 h2 align="center"> <a href="https://github.com/HellBoy-OP/HellBot">💥 HELLBOT 💥</a></h2>
  One and only. Others with some misfuntioning brain stay out from this SUPER POWERFULL BOT😏
 
-<details>
 
+<details>
 <details>
   <summary> <h4>Official Supports ✅</h4> </summary>
 
