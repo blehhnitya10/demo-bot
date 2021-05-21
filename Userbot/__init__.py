@@ -7,9 +7,8 @@ from userbot.helpers import functions as simpdef
 from userbot.Config import Config
 from var import Var
 
-
 StartTime = time.time()
-rebelversion = "2.0.1"
+REBELversion = "2.0"
 botversion = "0.1"
 
 os.system("pip install --upgrade pip")
@@ -32,7 +31,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-rebel_ID = ["1418571871"]
+REBEL_ID = ["1418571871"]
 
 """ PPE initialization. """
 
@@ -209,5 +208,5 @@ SUDO_LIST = {}
 
 
 from userbot.helpers import *
-from userbot.helpers import functions as rebeldef
-from userbot.cmdhelp import CmdHe
+from userbot.helpers import functions as REBELdef
+from userbot.cmdhelp import CmdHelp
