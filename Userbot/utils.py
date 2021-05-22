@@ -1,4 +1,4 @@
-# credits to @REBEL_IS_OP
+# credits to @mrconfused 
 
 import asyncio
 import datetime
@@ -10,13 +10,18 @@ import os
 import re
 import sys
 import time
+import shlex
 import traceback
+import functools
 from pathlib import Path
 from time import gmtime, strftime
-
+from typing import Tuple
+from telethon import functions, types
+from userbot import LOGS
 from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
+from userbot.helpers.tools import media_type
 
 from var import Var
 
@@ -61,12 +66,13 @@ def load_module(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.Config = Config
         mod.borg = bot
-        mod.rebelbot = bot
+        mod.REBELBOT = bot
         mod.edit_or_reply = edit_or_reply
-        mod.delete_rebel = delete_rebel
-        # support for rebelbot originals
-        sys.modules["rebelbot.utils"] = userbot.utils
-        sys.modules["rebelbot"] = userbot
+        mod.delete_REBEL = delete_REBEL
+        mod.media_type = media_type
+        # support for REBELBOT originals
+        sys.modules["REBELBOT.utils"] = userbot.utils
+        sys.modules["REBELBOT"] = userbot
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
@@ -115,12 +121,12 @@ def admin_cmd(pattern=None, command=None, **args):
                 CMD_LIST.update({file_test: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
-                rebelreg = "^" + Config.COMMAND_HAND_LER
+                REBELreg = "^" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                rebelreg = "^\\" + Config.COMMAND_HAND_LER
+                REBELreg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(rebelreg + pattern)
+            args["pattern"] = re.compile(REBELreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -180,12 +186,12 @@ def sudo_cmd(pattern=None, command=None, **args):
                 SUDO_LIST.update({file_test: [cmd]})
         else:
             if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                rebelreg = "^" + Config.SUDO_COMMAND_HAND_LER
+                REBELreg = "^" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.SUDO_COMMAND_HAND_LER[1]
             elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                rebelreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
+                REBELreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(rebelreg + pattern)
+            args["pattern"] = re.compile(REBELreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -284,13 +290,13 @@ async def edit_or_reply(
     await event.delete()
     os.remove(file_name)
 
-async def delete_rebel(event, text, time=None, parse_mode=None, link_preview=None):
+async def delete_REBEL(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
     time = time or 5
     if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
-        rebelevent = (
+        REBELevent = (
             await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
             if reply_to
             else await event.reply(
@@ -298,11 +304,11 @@ async def delete_rebel(event, text, time=None, parse_mode=None, link_preview=Non
             )
         )
     else:
-        rebelevent = await event.edit(
+        REBELevent = await event.edit(
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await rebelevent.delete()
+    return await REBELevent.delete()
 
 # from paperplaneextended
 on = bot.on
@@ -602,3 +608,44 @@ def command(**args):
         return func
 
     return decorator
+
+
+# executing of terminal commands
+async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
+    args = shlex.split(cmd)
+    process = await asyncio.create_subprocess_exec(
+        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    return (
+        stdout.decode("utf-8", "replace").strip(),
+        stderr.decode("utf-8", "replace").strip(),
+        process.returncode,
+        process.pid,
+    )
+
+
+def run_sync(func, *args, **kwargs):
+    return asyncio.get_event_loop().run_in_executor(
+        None, functools.partial(func, *args, **kwargs)
+    )
+
+
+def run_async(loop, coro):
+    return asyncio.run_coroutine_threadsafe(coro, loop).result()
+
+
+async def unsavegif(event, h1m4n5hu0p):
+    try:
+        await event.client(
+            functions.messages.SaveGifRequest(
+                id=types.InputDocument(
+                    id=h1m4n5hu0p.media.document.id,
+                    access_hash=h1m4n5hu0p.media.document.access_hash,
+                    file_reference=h1m4n5hu0p.media.document.file_reference,
+                ),
+                unsave=True,
+            )
+        )
+    except Exception as e:
+        LOGS.info(str(e))
