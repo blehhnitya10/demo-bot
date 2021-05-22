@@ -52,7 +52,7 @@ for name in files:
 
 import userbot._core
 
-print(f"""REBELBOT IS ON!!! REBELBOT VERSION :- {REBELversion} YOUR 𝕄𝔸𝔽𝕀𝔸𝔹𝕆𝕋 IS READY TO USE! FOR CHECK YOUR BOT WORKING OR NOT PLEASE TYPE (.alive/.ping) ENJOY YOUR BOT! JOIN FOR MORE FUTURE UPDATES @REBELBOT_SUPPORT .""")
+print(f"""REBELBOT IS ON!!! REBELBOT VERSION :- {REBELversion} YOUR 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 IS READY TO USE! FOR CHECK YOUR BOT WORKING OR NOT PLEASE TYPE (.alive/.ping) ENJOY YOUR BOT! JOIN FOR MORE FUTURE UPDATES @REBELBOT_SUPPORT .""")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
