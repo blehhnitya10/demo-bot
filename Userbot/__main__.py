@@ -7,7 +7,7 @@ from telethon import TelegramClient
 from var import Var
 from userbot.Config import Config
 from userbot.utils import load_module
-from userbot import LOAD_PLUG, LOGS, rebelversion
+from userbot import LOAD_PLUG, LOGS, REBELversion
 from pathlib import Path
 import asyncio
 import telethon.utils
@@ -51,7 +51,7 @@ for name in files:
 
 import userbot._core
 
-print(f"""REBELBOT IS ON!!! REBELBOT VERSION :- {rebelversion} YOUR ℝ𝔼𝔹𝔼𝕃𝔹𝕆𝕋 IS READY TO USE! FOR CHECK YOUR BOT WORKING OR NOT PLEASE TYPE (.alive/.ping) ENJOY YOUR BOT! JOIN FOR MORE FUTURE UPDATE @REBELBOT_SUPPORT .""")
+print(f"""REBELBOT IS ON!!! REBELBOT VERSION :- {REBELversion} YOUR 𝕄𝔸𝔽𝕀𝔸𝔹𝕆𝕋 IS READY TO USE! FOR CHECK YOUR BOT WORKING OR NOT PLEASE TYPE (.alive/.ping) ENJOY YOUR BOT! JOIN FOR MORE FUTURE UPDATES @REBELBOT_SUPPORT .""")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
