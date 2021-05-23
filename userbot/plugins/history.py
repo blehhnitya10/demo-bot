@@ -4,22 +4,22 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from REBELBOT import bot, CmdHelp
 from REBELBOT.utils import admin_cmd, edit_or_reply as eor, sudo_cmd
 
-@rebelbot.on(admin_cmd(pattern="history ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="history ?(.*)", allow_sudo=True))
-async def _(mafiaevent):
-    if mafiaevent.fwd_from:
+@REBELBOT.on(admin_cmd(pattern="history ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="history ?(.*)", allow_sudo=True))
+async def _(REBELevent):
+    if REBELevent.fwd_from:
         return 
-    if not mafiaevent.reply_to_msg_id:
-       await eor(mafiaevent, "`Please Reply To A User To Get This Module Work`")
+    if not REBELevent.reply_to_msg_id:
+       await eor(REBELevent, "`Please Reply To A User To Get This Module Work`")
        return
-    reply_message = await mafiaevent.get_reply_message() 
+    reply_message = await REBELevent.get_reply_message() 
     chat = "Sangmatainfo_bot"
     victim = reply_message.sender.id
     if reply_message.sender.bot:
-       await eor(mafiaevent, "Need actual users. Not Bots")
+       await eor(REBELevent, "Need actual users. Not Bots")
        return
-    await eor(mafiaevent, "Checking...")
-    async with mafiaevent.client.conversation(chat) as conv:
+    await eor(REBELevent, "Checking...")
+    async with REBELevent.client.conversation(chat) as conv:
           try:     
               response1 = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
               response2 = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
@@ -29,30 +29,30 @@ async def _(mafiaevent):
               response2 = await response2 
               response3 = await response3 
           except YouBlockedUserError: 
-              await mafiaevent.reply("Please unblock ( @Sangmatainfo_bot ) ")
+              await REBELevent.reply("Please unblock ( @Sangmatainfo_bot ) ")
               return
           if response1.text.startswith("No records found"):
-             await eor(mafiaevent, "User never changed his Username...")
+             await eor(REBELevent, "User never changed his Username...")
           else: 
-             await mafiaevent.delete()
-             await mafiaevent.client.send_message(mafiaevent.chat_id, response2.message)
+             await REBELevent.delete()
+             await REBELevent.client.send_message(REBELevent.chat_id, response2.message)
 
-@rebelbot.on(admin_cmd(pattern="unh ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
-async def _(mafiaevent):
-    if mafiaevent.fwd_from:
+@REBELBOT.on(admin_cmd(pattern="unh ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
+async def _(REBELevent):
+    if REBELevent.fwd_from:
         return 
-    if not mafiaevent.reply_to_msg_id:
-       await eor(mafiaevent, "`Please Reply To A User To Get This Module Work`")
+    if not REBELevent.reply_to_msg_id:
+       await eor(REBELevent, "`Please Reply To A User To Get This Module Work`")
        return
-    reply_message = await mafiaevent.get_reply_message() 
+    reply_message = await REBELevent.get_reply_message() 
     chat = "Sangmatainfo_bot"
     victim = reply_message.sender.id
     if reply_message.sender.bot:
-       await eor(mafiaevent, "Need actual users. Not Bots")
+       await eor(REBELevent, "Need actual users. Not Bots")
        return
-    await eor(mafiaevent, "Checking...")
-    async with mafiaevent.client.conversation(chat) as conv:
+    await eor(REBELevent, "Checking...")
+    async with REBELevent.client.conversation(chat) as conv:
           try:     
               response1 = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
               response2 = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
@@ -62,13 +62,13 @@ async def _(mafiaevent):
               response2 = await response2 
               response3 = await response3 
           except YouBlockedUserError: 
-              await mafiaevent.reply("Please unblock ( @Sangmatainfo_bot ) ")
+              await REBELevent.reply("Please unblock ( @Sangmatainfo_bot ) ")
               return
           if response1.text.startswith("No records found"):
-             await eor(mafiaevent, "User never changed his Username...")
+             await eor(REBELevent, "User never changed his Username...")
           else: 
-             await mafiaevent.delete()
-             await mafiaevent.client.send_message(mafiaevent.chat_id, response3.message)
+             await REBELevent.delete()
+             await REBELevent.client.send_message(REBELevent.chat_id, response3.message)
 
 CmdHelp("history").add_command(
   "history", "<reply to a user>", "Fetches the name history of replied user."
