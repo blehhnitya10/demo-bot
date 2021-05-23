@@ -14,7 +14,7 @@ async def blowjob(event):
     reply = await event.get_reply_message()
     user_id = reply.sender_id
     if user_id == (await borg.get_me()).id:	
-        await edit_or_reply(event, "I guess you need some rest. You are trying to gmute yourself😌")	
+        await edit_or_reply(event, "ABA TUU KHUD KOO KUUU KAR RAHA HAA TUU PAGAL TOO NAA HOO GAYA HAA NA PHALA TUU RANCHI SA AA FIR KARNA MERE KOO USER")	
         	
         return
     elif event.is_private:
@@ -29,7 +29,7 @@ async def blowjob(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await edit_or_reply(event, "I need a user to gmute. Please reply or get his uid")
+        return await edit_or_reply(event, "ABA KISI KO TAG TOO KARO KHA SAA AATA HAA YA LOG PATA NAHI 😂😂")
     chat_id = event.chat_id
     chat = await event.get_chat()
     if is_muted(userid, "gmute"):
@@ -39,7 +39,7 @@ async def blowjob(event):
     except Exception as e:
         await edit_or_reply(event, "Error occured!\nError is " + str(e))
     else:
-        await edit_or_reply(event, "Successfully Fucked this user's mouth.")
+        await edit_or_reply(event, "ABB BOLO BETA BHUT BOLE RAHA THA TU TERE MOUTH MA MERA WALA HA ABB")
 
 
 @bot.on(admin_cmd(pattern=r"ungmute ?(\d+)?"))
@@ -60,10 +60,10 @@ async def cumshot(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await edit_or_reply(event, "Please reply to a user or add them into the command to ungmute them.")
+        return await edit_or_reply(event, "ABA KISI KO TAG TOO KARO KHA SAA AATA HAA YA LOG PATA NAHI 😂😂")
     chat_id = event.chat_id
     if not is_muted(userid, "gmute"):
-        return await edit_or_reply(event, "This user can already speak freely✌️😃")
+        return await edit_or_reply(event, "SUN TUU PHALA SAA BOLE SAKTA HAA EK BAAR APNI GAND KO VV TAG KAR LOO MATLAB KUCH VV YAAR🥺🥺🥺")
     try:
         unmute(userid, "gmute")
     except Exception as e:
