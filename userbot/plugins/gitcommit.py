@@ -27,7 +27,7 @@ async def download(event):
     if Var.GIT_REPO_NAME is None:
         await edit_or_reply(event, "`Please ADD Proper Github Repo Name of REBELBOT`")
         return
-    rebelbot = await edit_or_reply(event, "Processing ...")
+    REBELBOT = await edit_or_reply(event, "Processing ...")
     if not os.path.isdir(GIT_TEMP_DIR):
         os.makedirs(GIT_TEMP_DIR)
     start = datetime.now()
@@ -39,19 +39,19 @@ async def download(event):
             reply_message.media, GIT_TEMP_DIR
         )
     except Exception as e:
-        await rebelbot.edit(str(e))
+        await REBELBOT.edit(str(e))
     else:
         end = datetime.now()
         ms = (end - start).seconds
         await event.delete()
-        await rebelbot.edit(
+        await REBELBOT.edit(
             "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
         )
-        await rebelbot.edit("Committing to Github....")
-        await git_commit(downloaded_file_name, rebelbot)
+        await REBELBOT.edit("Committing to Github....")
+        await git_commit(downloaded_file_name, REBELBOT)
 
 
-async def git_commit(file_name, rebelbot):
+async def git_commit(file_name, REBELBOT):
     content_list = []
     access_token = Var.GITHUB_ACCESS_TOKEN
     g = Github(access_token)
@@ -67,7 +67,7 @@ async def git_commit(file_name, rebelbot):
     for i in content_list:
         create_file = True
         if i == 'ContentFile(path="' + file_name + '")':
-            return await rebelbot.edit("`File Already Exists`")
+            return await REBELBOT.edit("`File Already Exists`")
             create_file = False
     file_name = "userbot/plugins/" + file_name
     if create_file == True:
@@ -80,14 +80,14 @@ async def git_commit(file_name, rebelbot):
             print("Committed File")
             ccess = Var.GIT_REPO_NAME
             ccess = ccess.strip()
-            await rebelbot.edit(
+            await REBELBOT.edit(
                 f"`Commited On Your Github Repo`\n\n[Your STDPLUGINS](https://github.com/{ccess}/tree/master/userbot/plugins/)"
             )
         except:
             print("Cannot Create Plugin")
-            await rebelbot.edit("Cannot Upload Plugin")
+            await REBELBOT.edit("Cannot Upload Plugin")
     else:
-        return await rebelbot.edit("`Committed Suicide`")
+        return await REBELBOT.edit("`Committed Suicide`")
         
         
 CmdHelp("github").add_command(
