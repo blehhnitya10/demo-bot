@@ -10,7 +10,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from telethon.events import ChatAction
 
-HIMANSHU = str(ALIVE_NAME) if ALIVE_NAME else "rebel User"
+REBEL = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
 papa = borg.uid
 
 
@@ -64,11 +64,11 @@ async def gban(userbot):
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
     if not sender.id == hum.id:
-        rebelbot = await edit_or_reply(ids, "Trying to gban this retard!")
+        REBELBOT = await edit_or_reply(ids, "Trying to gban this retard!")
     else:
-        rebelbot = await edit_or_reply(ids, "`Ok! Gbaning this piece of shit....`")
+        REBELBOT = await edit_or_reply(ids, "`JANAB ABB APP KII KALLI GAND FAT JAYAGE🖕🖕🤣`")
     hum = await userbot.client.get_me()
-    await rebelbot.edit(f"`🔥beta baap sa panga abb dekh ky ho ga tera`")
+    await REBELBOT.edit(f"`🔥BETA BAAP SAAA PANAGA NAHI ABB DEKHO KYA HOO GAAA TERA. ABBB TERI KALLI GAND KO FAR DUU GA`")
     my_mention = "[{}](tg://user?id={})".format(hum.first_name, hum.id)
     f"@{hum.username}" if hum.username else my_mention
     await userbot.get_chat()
@@ -86,11 +86,11 @@ async def gban(userbot):
         if not reason:
             reason = "Private"
     except:
-        return await rebelbot.edit(f"**Something W3NT Wrong 🤔**")
+        return await REBELBOT.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1418571871:
-            return await rebelbot.edit(
-                f"`First Grow Some Balls To Gban My Creater🤫🚶`"
+            return await REBELBOT.edit(
+                f"`SUNO TERI KALLI GAND FAR DUU TU  APNA BAAP KOO GMUTE KARA GAA RANDI SALA OKAD BANA PHALA`"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -109,17 +109,17 @@ async def gban(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await rebelbot.edit(f"Gbaning This retard🚶\n\nTotal Chats :- `{a}`")
+                await REBELBOT.edit(f"Gbaning This retard🚶\n\nTotal Chats :- `{a}`")
             except:
                 b += 1
     else:
-        await rebelbot.edit(f"`Either reply to a user or gib me user id/name`")
+        await REBELBOT.edit(f"`Either reply to a user or gib me user id/name`")
     try:
         if gmute(user.id) is False:
-            return await rebelbot.edit(f"**Error! User already gbanned.**")
+            return await REBELBOT.edit(f"**Error! User already gbanned.**")
     except:
         pass
-    return await rebelbot.edit(
+    return await REBELBOT.edit(
         f"[{user.first_name}](tg://user?id={user.id}) Beta BAAP SA PANGA NAHI [{REBEL}](tg://user?id={papa}) TU BETA HA MERA BETA HE RAH.\n\n**Gban Successful 🔥\nAffected Chats😏 : {a} **"
     )
 
@@ -132,11 +132,11 @@ async def gunban(userbot):
     sender = await ids.get_sender()
     hum = await ids.client.get_me()
     if not sender.id == hum.id:
-        rebelbot = await edit_or_reply(ids, "`Trying to ungban this kid...`")
+        REBELBOT = await edit_or_reply(ids, "`Trying to ungban this kid...`")
     else:
-        rebelbot = await edit_or_reply(ids, "`Ungban in progress...`")
+        REBELBOT = await edit_or_reply(ids, "`Ungban in progress...`")
     hum = await userbot.client.get_me()
-    await rebelbot.edit(f"`RUKO JARA SABAR KARO KAR RAHA HU...`")
+    await REBELBOT.edit(f"`RUKO JARA SABAR KARO KAR RAHA HU...`")
     my_mention = "[{}](tg://user?id={})".format(hum.first_name, hum.id)
     f"@{hum.username}" if hum.username else my_mention
     await userbot.get_chat()
@@ -154,10 +154,10 @@ async def gunban(userbot):
         if not reason:
             reason = "Private"
     except:
-        return await rebelbot.edit("**Som3ting W3nt Wr0ng**")
+        return await REBELBOT.edit("**Som3ting W3nt Wr0ng**")
     if user:
-        if user.id == 1212368262:
-            return await rebelbot.edit("**You need to grow some balls to gban / ungban my creator**")
+        if user.id == 1418571871:
+            return await REBELBOT.edit("**SUNO TERI KALLI GAND FAR DUU TU  APNA BAAP KOO GMUTE KARA GAA RANDI SALA OKAD BANA PHALA**")
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
         except:
@@ -175,18 +175,18 @@ async def gunban(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await rebelbot.edit(f"Ok! Now Ungbaning this kiddo.\nChats:- `{a}`")
+                await REBELBOT.edit(f"SALA RUK JAA KAR RAHA HUU NAHI JADA JALDI HAA TOO KHUD KAA BOT BANA LO JAYO.\nChats:- `{a}`")
             except:
                 b += 1
     else:
-        await rebelbot.edit("**Reply to a user**")
+        await REBELBOT.edit("**Reply to a user**")
     try:
         if ungmute(user.id) is False:
-            return await rebelbot.edit("**Error! User already ungbanned.**")
+            return await REBELBOT.edit("**Error! User already ungbanned.**")
     except:
         pass
-    return await rebelbot.edit(
-        f"**[{user.first_name}](tg://user?id={user.id}) Aur bhai.... Aagya swaad.**\n\nUngban Successful 🔥\nChats :- `{a}`"
+    return await REBELBOT.edit(
+        f"**[{user.first_name}](tg://user?id={user.id}) AUR BETA GAND HO GAYE CHOTI YA ABHI VV BADA HA.**\n\nUngban Successful 🔥\nChats :- `{a}`"
     )
 
 
