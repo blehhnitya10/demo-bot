@@ -2,7 +2,7 @@ from userbot import ALIVE_NAME, CMD_HELP
 from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rebel User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
 
 USERID = bot.uid
 
@@ -271,7 +271,7 @@ L = (
     "╬═╬ \n"
     "╬═╬ \n"
     "╬═╬ \n"
-    "╬═╬ rebelo, My Friend :D \n"
+    "╬═╬ REBELo, My Friend :D \n"
     "╬═╬☻/ \n"
     "╬═╬/▌ \n"
     "╬═╬/ \\n"
@@ -526,12 +526,12 @@ async def bluedevildog(dog):
     await edit_or_reply(dog, J)
 
 
-@bot.on(admin_cmd(pattern=r"rebelo$"))
-@bot.on(sudo_cmd(pattern="rebelo$", allow_sudo=True))
-async def bluedevilrebelo(rebelo):
-    if rebelo.fwd_from:
+@bot.on(admin_cmd(pattern=r"REBELo$"))
+@bot.on(sudo_cmd(pattern="REBELo$", allow_sudo=True))
+async def bluedevilREBELo(REBELo):
+    if REBELo.fwd_from:
         return
-    await edit_or_reply(rebelo, K)
+    await edit_or_reply(REBELo, K)
 
 
 @bot.on(admin_cmd(pattern=r"hmf$"))
@@ -617,7 +617,7 @@ CmdHelp("arts").add_command(
 ).add_command(
   'dog', None, 'Use and see'
 ).add_command(
-  'rebelo', None, 'Use and see'
+  'REBELo', None, 'Use and see'
 ).add_command(
   'hmf', None, 'Use and see'
 ).add_command(
