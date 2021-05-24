@@ -6,7 +6,7 @@ Available Commands:
 import emoji
 from googletrans import Translator
 
-from REBEL.utils import *
+from REBELBOT.utils import *
 from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="trt ?(.*)"))
