@@ -101,9 +101,9 @@ async def _(event):
         
 @bot.on(admin_cmd(pattern="istar$", outgoing=True))
 @bot.on(sudo_cmd(pattern="istar$", allow_sudo=True))
-async def ammastar(rebelstar):
+async def ammastar(REBELstar):
   
-    if rebelstar.fwd_from:
+    if REBELstar.fwd_from:
       
         return
       
@@ -111,7 +111,7 @@ async def ammastar(rebelstar):
     
     animation_ttl = range(0, 11)
     
-    await edit_or_reply(rebelstar, "I am A Star")
+    await edit_or_reply(REBELstar, "I am A Star")
     
     animation_chars = [
         "I Party like a rockstar",
@@ -125,7 +125,7 @@ async def ammastar(rebelstar):
       
         await asyncio.sleep(animation_interval)
         
-        await rebelstar.edit(animation_chars[i % 11])
+        await REBELstar.edit(animation_chars[i % 11])
     
         
 @bot.on(admin_cmd(pattern=r"lmoon", outgoing=True))
@@ -200,7 +200,7 @@ async def _(event):
     await edit_or_reply(event, "Switch")
 
     animation_chars = [
-         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/H1M4N5HU0P/rebel-BOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\⬜⬜⬜⬜",
+         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/H1M4N5HU0P/REBEL-BOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\⬜⬜⬜⬜",
          "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/H1M4N5HU0P/REBELBOT-BOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n[👉](https://t.me/H1M4N5HU0P)⬜⬜⬜⬜⬜⬜",
          "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/H1M4N5HU0P/REBELBOT-BOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬛[👉](https://t.me/H1M4N5HU0P)⬜⬜⬜⬜⬜",
          "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜[🔲](https://github.com/H1M4N5HU0P/REBELBOT-BOT)\n⬜⬜⬜⬜⬜⬜⬜\n⬜[👆](https://t.me/H1M4N5HU0P)⬜⬜⬜⬜⬜\n⬛⬛⬜⬜⬜⬜⬜",
