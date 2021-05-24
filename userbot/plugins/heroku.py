@@ -22,7 +22,7 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
-rebel_logo = "./REBEL725/REBELBOT_logo.jpg"
+REBEL_logo = "./REBEL725/REBELBOT_logo.jpg"
 
 
 @borg.on(
@@ -184,19 +184,19 @@ async def _(dyno):
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
         app = Heroku.app(HEROKU_APP_NAME)
-        thumb = rebel_logo
+        thumb = REBEL_logo
     except:
         return await dyno.reply(
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku\n\n[Visit Support Group For Help](https://t.me/REBELBOT_Chit_Chat)"
         )
-    rebel_data = app.get_log()
-    rebel_key = (
-        requests.post("https://nekobin.com/api/documents", json={"content": rebel_data})
+    REBEL_data = app.get_log()
+    REBEL_key = (
+        requests.post("https://nekobin.com/api/documents", json={"content": REBEL_data})
         .json()
         .get("result")
         .get("key")
     )
-    rebel_url = f"⚡ Pasted this logs.txt to [NekoBin](https://nekobin.com/{rebel_key}) && [RAW PAGE](https://nekobin.com/raw/{rebel_key}) ⚡"
+    REBEL_url = f"⚡ Pasted this logs.txt to [NekoBin](https://nekobin.com/{REBEL_key}) && [RAW PAGE](https://nekobin.com/raw/{REBEL_key}) ⚡"
     await dyno.edit("Getting Logs....")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
@@ -206,7 +206,7 @@ async def _(dyno):
         "logs.txt",
         reply_to=dyno.id,
         thumb=thumb,
-        caption=rebel_url,
+        caption=REBEL_url,
     )
 
     await asyncio.sleep(5)
