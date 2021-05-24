@@ -1,7 +1,7 @@
 import time
 
-from userbot import ALIVE_NAME, StartTime, rebelversion
-from rebelbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import ALIVE_NAME, StartTime, REBELversion
+from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 async def reply_id(event):
@@ -13,8 +13,8 @@ async def reply_id(event):
     return reply_to_id
 
 
-DEFAULTUSER = ALIVE_NAME or "rebel User"
-rebel_IMG = Config.ALIVE_PIC
+DEFAULTUSER = ALIVE_NAME or "REBEL User"
+REBEL_IMG = Config.ALIVE_PIC
 CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "𝕃𝕖𝕘𝕖𝕟𝕕𝕒𝕣𝕪_𝔸𝔽_𝕄𝕒𝕗𝕚𝕒𝔹𝕠𝕥"
 
 USERID = bot.uid
@@ -60,16 +60,16 @@ async def amireallyalive(alive):
         return
     reply_to_id = await reply_id(alive)
 
-    if rebel_IMG:
-        rebel_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        rebel_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
-        rebel_caption += f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
-        rebel_caption += f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
-        rebel_caption += f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :**`{rebelversion}`\n"
-        rebel_caption += f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
-        rebel_caption += f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n"
+    if REBEL_IMG:
+        REBEL_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
+        REBEL_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
+        REBEL_caption += f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
+        REBEL_caption += f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
+        REBEL_caption += f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :**`{REBELversion}`\n"
+        REBEL_caption += f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
+        REBEL_caption += f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n"
         await alive.client.send_file(
-            alive.chat_id, rebel_IMG, caption=rebel_caption, reply_to=reply_to_id
+            alive.chat_id, REBEL_IMG, caption=REBEL_caption, reply_to=reply_to_id
         )
         await alive.delete()
     else:
@@ -79,7 +79,7 @@ async def amireallyalive(alive):
             f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
             f"__**𝗕𝗢𝗧 𝗦𝗧𝗔𝗧𝗨𝗦**__\n\n"
             f"**★ 𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡 𝗩𝗘𝗥𝗦𝗜𝗢𝗡 :** `1.15.0`\n"
-            f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :** `{rebelversion}`\n"
+            f"**★ 𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧 :** `{REBELversion}`\n"
             f"**★ 𝗨𝗣𝗧𝗜𝗠𝗘 :** `{uptime}\n`"
             f"**★ 𝗠𝗔𝗦𝗧𝗘𝗥 :** {mention}\n",
         )
