@@ -15,13 +15,13 @@ global groupsid
 groupsid = []
 
 
-async def all_groups_id(rebel):
-    rebelgroups = []
-    async for dialog in rebel.client.iter_dialogs():
+async def all_groups_id(REBEL):
+    REBELgroups = []
+    async for dialog in REBEL.client.iter_dialogs():
         entity = dialog.entity
         if isinstance(entity, Channel) and entity.megagroup:
-            rebelgroups.append(entity.id)
-    return rebelgroups
+            REBELgroups.append(entity.id)
+    return REBELgroups
 
 
 @bot.on(admin_cmd(pattern="frwd$"))
