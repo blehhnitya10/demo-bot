@@ -35,16 +35,16 @@ async def spammer(e):
 
 @bot.on(admin_cmd(pattern="bigspam"))
 @bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
-async def bigspam(rebel):
-    if not rebel.text[0].isalpha() and rebel.text[0] not in ("/", "#", "@", "!"):
-        rebel_msg = rebel.text
-        rebelbot_count = int(rebel_msg[9:13])
-        rebel_spam = str(rebel.text[13:])
-        for i in range(1, rebelbot_count):
-            await rebel.respond(rebel_spam)
-        await rebel.delete()
+async def bigspam(REBEL):
+    if not REBEL.text[0].isalpha() and REBEL.text[0] not in ("/", "#", "@", "!"):
+        REBEL_msg = REBEL.text
+        REBELBOT_count = int(REBEL_msg[9:13])
+        REBEL_spam = str(REBEL.text[13:])
+        for i in range(1, REBELBOT_count):
+            await REBEL.respond(REBEL_spam)
+        await REBEL.delete()
         if LOGGER:
-            await rebel.client.send_message(
+            await REBEL.client.send_message(
                 LOGGER_GROUP, "#BIGSPAM \n\n" "Bigspam was executed successfully"
             )
 
@@ -102,5 +102,5 @@ CmdHelp("spam").add_command(
 ).add_command(
   "dspam", "<delay> <spam count> <text>", "Sends the text 'X' number of times in 'Y' seconds of delay", ".dspam 5 100 Hello"
 ).add_command(
-  "bigspam", "<count> <text>", "Sends the text 'X' number of times. This what rebelbot iz known for. The Best BigSpam Ever", ".bigspam 5000 Hello"
+  "bigspam", "<count> <text>", "Sends the text 'X' number of times. This what REBELBOT iz known for. The Best BigSpam Ever", ".bigspam 5000 Hello"
 ).add()
