@@ -12,8 +12,8 @@ from userbot import bot as REBELBOT
 from userbot import BOTLOG, BOTLOG_CHATID
 
 
-@rebelbot.on(admin_cmd(outgoing=True, pattern="del$"))
-@rebelbot.on(sudo_cmd(allow_sudo=True, pattern="del$"))
+@REBELBOT.on(admin_cmd(outgoing=True, pattern="del$"))
+@REBELBOT.on(sudo_cmd(allow_sudo=True, pattern="del$"))
 @errors_handler
 async def delete_it(safai):
     """ For .del command, delete the replied message. """
