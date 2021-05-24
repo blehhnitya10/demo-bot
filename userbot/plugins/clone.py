@@ -15,7 +15,7 @@ from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
 from REBELBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rebel User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
 
 DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "ʟɛɢɛռɖaʀʏ ᴀғ ɦɛʟʟɮօt"
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
@@ -48,7 +48,7 @@ async def _(event):
         last_name = html.escape(last_name)
         last_name = last_name.replace("\u2060", "")
     if last_name is None:
-        last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
+        last_name = "⁪⁬⁮⁮⁮⁮ ‌"
     # inspired by https://telegram.dog/afsaI181
     user_bio = replied_user.about
     if user_bio is not None:
