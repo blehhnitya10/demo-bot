@@ -65,7 +65,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_srebel(
+    process = await asyncio.create_subprocess_sREBEL(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in [ℝ𝔼𝔹𝔼𝕃𝔹𝕆𝕋](t.me/REBELBOT_official) DOWNLOADS Folder:**\n"
@@ -100,7 +100,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_srebel(
+    process = await asyncio.create_subprocess_sREBEL(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in root directory:**\n"
@@ -135,7 +135,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_srebel(
+    process = await asyncio.create_subprocess_sREBEL(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in SAVED directory:**\n"
@@ -174,7 +174,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_srebel(
+    process = await asyncio.create_subprocess_sREBEL(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in root directory:**\n"
@@ -213,7 +213,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_srebel(
+    process = await asyncio.create_subprocess_sREBEL(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     OUTPUT = f"**Files in root directory:**\n"
