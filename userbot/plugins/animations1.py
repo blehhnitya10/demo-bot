@@ -7,7 +7,7 @@ from userbot import *
 from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rebel User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
 
 @bot.on(admin_cmd(pattern=f"indflag$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"indflag$", allow_sudo=True))
@@ -16,7 +16,7 @@ async def _(event):
         return
     animation_interval = 0.1
     animation_ttl = range(0, 36)
-    await edit_or_reply(event, "rebelo")
+    await edit_or_reply(event, "REBELo")
     animation_chars = [
         "Indian Flag",
         "**🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧\n🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧\n🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧\n⬜️⬜️⬜️⬜️⬜️🟦🟦🟦⬜️⬜️⬜️⬜️⬜️\n⬜️⬜️⬜️⬜️⬜️🟦🟦🟦⬜️⬜️⬜️⬜️⬜️\n⬜️⬜️⬜️⬜️⬜️🟦🟦🟦⬜️⬜️⬜️⬜️⬜️\n🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩\n🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩\n🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩\n\n                🧡🤍💚\n\nProud To Be An Indian❣️!!**",
@@ -142,12 +142,12 @@ async def _(event):
     animation_chars = [
         "`Connecting To Raj Bhawan`",
         "`Call Connected.`",
-        "`Secretary: rebelo This is Raj Bhawan. Who is this?`",
-        f"`Me: rebelo this is` `{DEFAULUSER}` .Please connect me to Prime Minister",
+        "`Secretary: REBELo This is Raj Bhawan. Who is this?`",
+        f"`Me: REBELo this is` `{DEFAULUSER}` .Please connect me to Prime Minister",
         "`User Authorised.`",
         "`Calling`  `At +9189*#*#*#56`",
         "`Private  Call Connected...`",
-        "`Me: rebelo Sir, How are you!!`",
+        "`Me: REBELo Sir, How are you!!`",
         "`Prime Minister: May I Know Who Is This?`",
         f"`Me: Yes sur, itz me` `{DEFAULTUSER}`",
         "`Prime Minister: OMG!!! Long time no see, Wassup Brother...\nI'm fine btw... how are you?`",
