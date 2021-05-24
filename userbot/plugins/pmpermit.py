@@ -9,7 +9,7 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot.plugins.sql_helper import pmpermit_sql as pmpermit_sql
-from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, rebel_ID
+from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, REBEL_ID
 from userbot.Config import Config
 from REBELBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
@@ -17,7 +17,7 @@ from userbot.cmdhelp import CmdHelp
 PM_TRUE_FALSE = Config.PM_DATA
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-rebelPIC = (
+REBELPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
     else "https://telegra.ph/file/8b086b95491df9f0d4f58.jpg"
@@ -30,7 +30,7 @@ h1m4n5hu0p = (
     if CUSTOM_PMPERMIT
     else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rebel User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
 USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's REBELBOT.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
     "Hello, This is **REBELBOT Ultra Private Security Protocol⚠️**.\n"
@@ -205,7 +205,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[rebelbot]Current Approved PMs",
+                    caption="[REBELBOT]Current Approved PMs",
                     reply_to=event,
                 )
                 await event.delete()
@@ -287,7 +287,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             except:
                 return
         r = await borg.send_file(
-            event.chat_id, rebelPIC, caption=USER_BOT_NO_WARN, force_document=False
+            event.chat_id, REBELPIC, caption=USER_BOT_NO_WARN, force_document=False
         )
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
