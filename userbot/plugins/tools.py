@@ -14,7 +14,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CMD_HELP
-from REBEL.utils import admin_cmd, edit_or_reply, sudo_cmd
+from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 #==================REBEL==================
