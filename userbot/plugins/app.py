@@ -10,7 +10,7 @@ from userbot import ALIVE_NAME, CMD_HELP
 from REBELBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "rebel User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "REBEL User"
 
 
 @bot.on(admin_cmd(pattern="app (.*)"))
