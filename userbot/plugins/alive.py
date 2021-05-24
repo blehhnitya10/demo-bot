@@ -2,13 +2,13 @@
 # animation Idea by @NOOB_GUY_OP (Sipakisking) 
 # Made by @REBEL_IS_OP...and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
-# Porting in rebel Userbot by @REBEL_IS_OP
+# Porting in REBEL Userbot by @REBEL_IS_OP
 
 import asyncio
 import random
 from telethon import events
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME, rebelversion
+from userbot import ALIVE_NAME, REBELversion
 from REBELBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 
@@ -28,7 +28,7 @@ if ludosudo:
 else:
     sudou = "False"
 
-rebel = bot.uid
+REBEL = bot.uid
 
 edit_time = 10
 """ =======================CONSTANTS====================== """
@@ -39,22 +39,22 @@ file3 = "https://telegra.ph/file/a3090425421917fd339ee.mp4"
 pm_caption = "  __**🔥🔥ℝ𝔼𝔹𝔼𝕃𝔹𝕆𝕋 𝕀𝕊 𝔸𝕃𝕀𝕍𝔼🔥🔥**__\n\n"
 
 pm_caption += (
-    f"                 👑𝕄𝔸𝕊𝕋𝔼ℝ👑\n**  『😈[{DEFAULTUSER}](tg://user?id={rebel})😈』**\n\n"
+    f"                 👑𝕄𝔸𝕊𝕋𝔼ℝ👑\n**  『😈[{DEFAULTUSER}](tg://user?id={REBEL})😈』**\n\n"
 )
 
 pm_caption += "🛡️𝗧𝗘𝗟𝗘𝗧𝗛𝗢𝗡🛡️ : `1.15.0` \n\n"
 
-pm_caption += f"😈𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧😈 : `{rebelversion}`\n\n"
+pm_caption += f"😈𝗥𝗘𝗕𝗘𝗟𝗕𝗢𝗧😈 : `{REBELversion}`\n\n"
 
 pm_caption += f"😱𝗦𝗨𝗗𝗢😱            : `{sudou}`\n\n"
 
 pm_caption += "😇𝗖𝗛𝗔𝗡𝗡𝗘𝗟😇️   : [ᴊᴏɪɴ](https://t.me/REBELBOT_SUPPORT)\n\n"
 
-pm_caption += "😎𝗖𝗥𝗘𝗔𝗧𝗢𝗥😎    : [༼🇷È🇧É🇱](https://t.me/REBEL_IS_OP)\n\n"
+pm_caption += "😎𝗖𝗥𝗘𝗔𝗧𝗢𝗥😎    : [༼AMAR](https://t.me/REBEL_IS_OP)\n\n"
 
-pm_caption += "🤩𝗦𝗨𝗣𝗣𝗢𝗥𝗧𝗘𝗥🤩    :[ⓃⒾⓈⒽⓊ](https://t.me/Baapisbacknishujibolmotherchod)\n\n"
+pm_caption += "🤩𝗦𝗨𝗣𝗣𝗢𝗥𝗧𝗘𝗥🤩    :[ⓃⒾⓈⒽⓊ](https://t.me/Ap_Ne_mujhe_yaad_kiya_awwww)\n\n"
 
-pm_caption += "      [🔥𝗥𝗘𝗣𝗢🔥]() 🔹 [📜𝗟𝗶𝗰𝗲𝗻𝘀𝗲📜](https://github.com/H1M4N5HU0P/rebel-BOT/blob/main/LICENSE)"
+pm_caption += "      [🔥𝗥𝗘𝗣𝗢🔥](https://github.com/REBEL725/REBELBOT) 🔹 [📜𝗟𝗶𝗰𝗲𝗻𝘀𝗲📜](https://github.com/REBEL725/REBELBOT/blob/main/LICENSE)"
 
 # @command(outgoing=True, pattern="^.alive$")
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -80,7 +80,7 @@ async def amireallyalive(alive):
     ok5 = await borg.edit_message(alive.chat_id, ok4, file=file2)
     
     await asyncio.sleep(edit_time)
-    ok6 = await borg.edit_message(alive.chat_id, ok5, file=file4)
+    ok6 = await borg.edit_message(alive.chat_id, ok5, file=file1)
     
     await asyncio.sleep(edit_time)
     ok7 = await borg.edit_message(alive.chat_id, ok6, file=file1)
