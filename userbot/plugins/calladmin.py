@@ -2,7 +2,7 @@
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
-from REBELBOT.util import admin_cmd
+from REBELBOT.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="admins"))
