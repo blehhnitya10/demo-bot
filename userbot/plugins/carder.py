@@ -7,34 +7,34 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
 from REBELBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from REBELBOT import CmdHelp, bot as rebelbot
+from REBELBOT import CmdHelp, bot as REBELBOT
 
 
 @REBELBOT.on(admin_cmd("gencc$"))
 @REBELBOT.on(sudo_cmd("gencc$", allow_sudo=True))
-async def _(rebelevent):
-    if rebelevent.fwd_from:
+async def _(REBELevent):
+    if REBELevent.fwd_from:
         return
-    rebelcc = Faker()
-    rebelname = rebelcc.name()
-    rebeladre = rebelcc.address()
-    rebelcard = rebelcc.credit_card_full()
+    REBELcc = Faker()
+    REBELname = REBELcc.name()
+    REBELadre = REBELcc.address()
+    REBELcard = REBELcc.credit_card_full()
     
-    await edit_or_reply(rebelevent, f"__**👤 NAME :- **__\n`{rebelname}`\n\n__**🏡 ADDRESS :- **__\n`{rebeladre}`\n\n__**💸 CARD :- **__\n`{rebelcard}`")
+    await edit_or_reply(REBELevent, f"__**👤 NAME :- **__\n`{REBELname}`\n\n__**🏡 ADDRESS :- **__\n`{REBELadre}`\n\n__**💸 CARD :- **__\n`{REBELcard}`")
     
 
-@rebelbot.on(admin_cmd(pattern="bin ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
+@REBELBOT.on(admin_cmd(pattern="bin ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    rebel_input = event.pattern_match.group(1)
+    REBEL_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/bin {rebel_input}")
+              await event.client.send_message(chat, f"/bin {REBEL_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -44,18 +44,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@rebelbot.on(admin_cmd(pattern="vbv ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
+@REBELBOT.on(admin_cmd(pattern="vbv ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="vbv ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    rebel_input = event.pattern_match.group(1)
+    REBEL_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/vbv {rebel_input}")
+              await event.client.send_message(chat, f"/vbv {REBEL_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -65,18 +65,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
     
     
-@rebelbot.on(admin_cmd(pattern="key ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
+@REBELBOT.on(admin_cmd(pattern="key ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="key ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    rebel_input = event.pattern_match.group(1)
+    REBEL_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/key {rebel_input}")
+              await event.client.send_message(chat, f"/key {REBEL_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -86,18 +86,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
  
   
-@rebelbot.on(admin_cmd(pattern="iban ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
+@REBELBOT.on(admin_cmd(pattern="iban ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    rebel_input = event.pattern_match.group(1)
+    REBEL_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/iban {rebel_input}")
+              await event.client.send_message(chat, f"/iban {REBEL_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -107,18 +107,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
     
-@rebelbot.on(admin_cmd(pattern="ccheck ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
+@REBELBOT.on(admin_cmd(pattern="ccheck ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="ccheck ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    rebel_input = event.pattern_match.group(1)
+    REBEL_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
     await event.edit("Checking...")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/ss {rebel_input}")
+              await event.client.send_message(chat, f"/ss {REBEL_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
@@ -128,18 +128,18 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
              
              
-@rebelbot.on(admin_cmd(pattern="ccbin ?(.*)"))
-@rebelbot.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
+@REBELBOT.on(admin_cmd(pattern="ccbin ?(.*)"))
+@REBELBOT.on(sudo_cmd(pattern="ccbin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return 
-    rebel_input = event.pattern_match.group(1)
+    REBEL_input = event.pattern_match.group(1)
     chat = "@carol5_bot"
-    await event.edit(f"Trying to generate CC from the given bin `{rebel_input}`")
+    await event.edit(f"Trying to generate CC from the given bin `{REBEL_input}`")
     async with event.client.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1247032902))
-              await event.client.send_message(chat, f"/gen {rebel_input}")
+              await event.client.send_message(chat, f"/gen {REBEL_input}")
               response = await response 
           except YouBlockedUserError: 
               await event.reply("Please Unblock @carol5_bot")
