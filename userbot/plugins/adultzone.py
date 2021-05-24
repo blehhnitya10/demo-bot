@@ -1,5 +1,5 @@
 # credits to userge
-# ported to REBELBOT by @REBEL
+# ported to REBELBOT by @REBEL_is_op
 # will be adding more soon
 
 import asyncio
