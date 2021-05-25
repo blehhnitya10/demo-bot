@@ -28,13 +28,13 @@ from userbot.cmdhelp import *
 from REBELBOT.utils import *
 from userbot.Config import Config
 
-rebel_row = Config.BUTTONS_IN_HELP
-rebel_emoji = Config.EMOJI_IN_HELP
+REBEL_row = Config.BUTTONS_IN_HELP
+REBEL_emoji = Config.EMOJI_IN_HELP
 # thats how a lazy guy imports
 # REBELBOT
 
 def button(page, modules):
-    Row = rebel_row
+    Row = REBEL_row
     Column = 3
 
     modules = sorted([modul for modul in modules if not modul.startswith("_")])
@@ -47,7 +47,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"{rebel_emoji} " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"{REBEL_emoji} " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -55,13 +55,13 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏰᎯᏣᏦ {rebel_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+               f"◀️ ᏰᎯᏣᏦ {REBEL_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{rebel_emoji} ❌ {rebel_emoji}•", data="close"
+               f"•{REBEL_emoji} ❌ {REBEL_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{rebel_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"{REBEL_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
@@ -135,12 +135,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await delete_rebel(event,
+            await delete_REBEL(event,
               "⚜️REBELBOT Menu Provider Is now Closed⚜️\n\n         **[© REBELBOT ™](t.me/REBELBOT_Support)**", 5, link_preview=False
             )
         else:
-            rebel_alert = "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™"
-            await event.answer(rebel_alert, cache_time=0, alert=True)
+            REBEL_alert = "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™"
+            await event.answer(REBEL_alert, cache_time=0, alert=True)
           
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
