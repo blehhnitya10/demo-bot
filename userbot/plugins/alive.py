@@ -50,7 +50,7 @@ pm_caption += f"😱𝗦𝗨𝗗𝗢😱            : `{sudou}`\n\n"
 
 pm_caption += "😇𝗖𝗛𝗔𝗡𝗡𝗘𝗟😇️   : [ᴊᴏɪɴ](https://t.me/REBELBOT_SUPPORT)\n\n"
 
-pm_caption += "😎𝗖𝗥𝗘𝗔𝗧𝗢𝗥😎    : [༼AMAR](https://t.me/REBEL_IS_OP)\n\n"
+pm_caption += "😎𝗖𝗥𝗘𝗔𝗧𝗢𝗥😎    : [𝗥𝗘𝗕𝗘𝗟](https://t.me/REBEL_IS_OP)\n\n"
 
 pm_caption += "🤩𝗦𝗨𝗣𝗣𝗢𝗥𝗧𝗘𝗥🤩    :[ⓃⒾⓈⒽⓊ](https://t.me/Ap_Ne_mujhe_yaad_kiya_awwww)\n\n"
 
@@ -68,10 +68,10 @@ async def amireallyalive(alive):
     ok = await borg.edit_message(alive.chat_id, on, file=file2) 
 
     await asyncio.sleep(edit_time)
-    ok2 = await borg.edit_message(alive.chat_id, ok, file=file3)
+    ok2 = await borg.edit_message(alive.chat_id, ok, file=file1)
 
     await asyncio.sleep(edit_time)
-    ok3 = await borg.edit_message(alive.chat_id, ok2, file=file1)
+    ok3 = await borg.edit_message(alive.chat_id, ok2, file=file2)
     
     await asyncio.sleep(edit_time)
     ok4 = await borg.edit_message(alive.chat_id, ok3, file=file3)
@@ -83,7 +83,7 @@ async def amireallyalive(alive):
     ok6 = await borg.edit_message(alive.chat_id, ok5, file=file1)
     
     await asyncio.sleep(edit_time)
-    ok7 = await borg.edit_message(alive.chat_id, ok6, file=file1)
+    ok7 = await borg.edit_message(alive.chat_id, ok6, file=file3)
 
     """ For .alive command, check if the bot is running.  """
     await borg.send_file(alive.chat_id, caption=pm_caption)
