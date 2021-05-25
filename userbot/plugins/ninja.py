@@ -31,3 +31,5 @@ async def delete_it(safai):
                 await delme.client.send_message(
                     BOTLOG_CHATID, "Well, I can't delete a message"
                 )
+CmdHelp("del").add_command(
+  'del',
