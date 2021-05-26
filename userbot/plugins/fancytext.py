@@ -4,7 +4,7 @@
 
 
 import random, re
-from REBELBOT.util import admin_cmd
+from REBELBOT.utils import admin_cmd
 import asyncio
 from telethon import events
 
