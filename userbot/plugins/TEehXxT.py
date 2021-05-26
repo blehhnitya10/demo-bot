@@ -1,7 +1,7 @@
 #THANKS TO @Veryhelpful (SAWAN SIR)
 #MADE BY NOOB (@I_AM_DANGEROUS_JATT)
 from telethon import events
-from REBELBOT.util import admin_cmd
+from REBELBOT.utils import admin_cmd
 
 ormiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u',
                'v','w','x','y','z']
