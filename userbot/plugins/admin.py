@@ -147,7 +147,7 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await REBELevent.edit("Promoted Successfully. ABB GROUP KAA BAAP NAA BAN GAYA HAA TUU BAAP MAA THA ORR MAA RAHU GAA !")
+        await REBELevent.edit(""Promoted Successfully! ABB GROUP KAA BAAP NAHI BANA GAYA")
     except BadRequestError:
         await REBELevent.edit(NO_PERM)
         return
@@ -191,7 +191,7 @@ async def demote(dmod):
     except BadRequestError:
         await REBELevent.edit(NO_PERM)
         return
-    await REBELevent.edit("Demoted Successfully BADA UDD RAHA THA TU OWNER BAN GAYA THA ABB LE ADMIN KOO APNI PICHA !")
+    await REBELevent.edit("Demoted Successfully!BHUT HERO BAN RAHA THA ABB BANA HERO")
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
@@ -232,7 +232,7 @@ async def ban(bon):
     if reason:
         await REBELevent.edit(f"{str(user.id)} is banned !!\nReason: {reason}")
     else:
-        await REBELevent.edit(f"{str(user.id)} is banned  BHAG BHNCHO IDHAR SA!")
+        await REBELevent.edit(f"{str(user.id)} is banned!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -261,7 +261,7 @@ async def nothanos(unbon):
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await REBELevent.edit("Unbanned Successfully  AAYA GAYA OKAD MAA !")
+        await REBELevent.edit("Unbanned Successfully!ABB AA GAYA OKAD MEE")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
@@ -308,7 +308,7 @@ async def pin(msg):
     except BadRequestError:
         await edit_or_reply(msg, NO_PERM)
         return
-    hmm = await edit_or_reply(msg, "KAR DIYA HAA PIN DEKHO NAHI DIKH RAHA HAA TOO MAR JAYO!")
+    hmm = await edit_or_reply(msg, "Pinned Successfully!")
     user = await get_user_from_id(msg.sender_id, msg)
     if BOTLOG:
         await msg.client.send_message(
@@ -353,7 +353,7 @@ async def kick(usr):
             f"Kicked [{user.first_name}](tg://user?id={user.id})!\nReason: {reason}"
         )
     else:
-        await REBELevent.edit(f"CHALA GAYA WOO [{user.first_name}](tg://user?id={user.id})!")
+        await REBELevent.edit(f"Kicked [{user.first_name}](tg://user?id={user.id})!")
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
