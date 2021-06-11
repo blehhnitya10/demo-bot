@@ -147,7 +147,7 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await REBELevent.edit(""Promoted Successfully! ABB GROUP KAA BAAP NAHI BANA GAYA"")
+        await REBELevent.edit("Promoted Successfully! ABB GROUP KAA BAAP NAHI BANA GAYA")
     except BadRequestError:
         await REBELevent.edit(NO_PERM)
         return
