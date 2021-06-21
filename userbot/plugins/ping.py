@@ -64,11 +64,11 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    event = await edit_or_reply(event, "__**(❛ ᑭσɳց ❜!__**")
+    event = await edit_or_reply(event, "__**🤖 𝗣𝗼𝗻𝗴!! __**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
-        f"__**꧁ Pong! ꧂__**\n\n   ⚘ {ms}\n   ⚘ __**My**__ __**Master**__ [{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
+        f"__** REBELBOT ɪꜱ ᴏɴʟɪɴᴇ..__**\n\n   ⚘ {ms}\n   ⚘ __**OWNER**__ [{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})"
     )
 
 
